@@ -20,7 +20,7 @@ function Dash() {
           
         <Container fluid>
       <Row>
-        <Col><h1>ÚLTIMAS NOTÍCIAS</h1></Col>
+        <Col><h1>Hospedagens</h1></Col>
       </Row>
     </Container>
     
@@ -31,9 +31,13 @@ function Dash() {
       
       <Container>
       <Row>
-        <Col><img width={'200'} heigh={'200'}src='https://cdn.ome.lt/cAxqdLBNnl8xrMGozTFimLwARAU=/987x0/smart/uploads/conteudo/fotos/aranhaverso_wPDDMSA.png'/></Col>
-        <Col><h6>Homem-Aranha Através do Aranhaverso ganhará curta-metragem</h6></Col>
-        <Col></Col>
+        <Col><img style={{width: '200px', height: '100px'}}  src='https://cf.bstatic.com/xdata/images/hotel/square600/173466882.webp?k=8380792f64a431577c29d45c3e7dba2f2a55a1f920832ee9f874e2496388304d&o='/></Col>
+        <Col><h6 a href="/agenda">Bourbon Barra da Tijuca Residence</h6></Col>
+        <Col><h6> R$368 Diária</h6>
+        <Button variant="primary" a href='/agenda'>
+        Agendar
+      </Button>
+        </Col>
         <Col></Col>
         
         
@@ -41,54 +45,85 @@ function Dash() {
       </Row>
       <br/><br/>
       <Row>
-        <Col><img width={'200'} heigh={'200'}src='https://cdn.ome.lt/WCD8QpLp84s12rcsdjPo0og0qow=/987x0/smart/uploads/conteudo/fotos/the_town_x9HWsP5.png'/></Col>
-        <Col><h6>Bebe Rexha e H.E.R são confirmadas no The Town</h6></Col>
-        <Col></Col>
+        <Col><img style={{width: '200px', height: '100px'}}  src='https://cf.bstatic.com/xdata/images/hotel/square600/54453581.webp?k=c8a6206c59abe7c156115341c726fab8165d1ef215d4c109e0a1723870cb61ee&o='/></Col>
+        <Col><h6>Hotel Atlantico Prime</h6></Col>
+        <Col><h6> R$205 Diária</h6>
+        <Button variant="primary" a href='/agenda'>
+        Agendar
+      </Button>
+        </Col>
+        
         <Col></Col>
         
         <br/><br/>
       </Row>
       <br/><br/>
       <Row>
-        <Col><img width={'200'} heigh={'200'}src='https://cdn.ome.lt/fz_40h0jy-mdCio2JqfZUj2088Q=/987x0/smart/uploads/conteudo/fotos/Clint_Eastwood.png'/></Col>
-        <Col><h6>Clint Eastwood planeja dirigir último filme de sua carreira</h6></Col>
-        <Col></Col>
-        <Col></Col>
-        
-        <br/><br/>
-      </Row>
-      <br/><br/>
-      <Row>
-        <Col><img width={'200'} heigh={'200'}src='https://cdn.ome.lt/i1LmFaTHx9Nor-hZQLyDeEculOQ=/987x0/smart/uploads/conteudo/fotos/quesada.png'/></Col>
-        <Col><h6>Joe Quesada, ex editor-chefe da Marvel, é contratado pelo Prime Video</h6></Col>
-        <Col></Col>
+      
+        <Col><img style={{width: '200px', height: '100px'}}  src='https://cf.bstatic.com/xdata/images/hotel/square600/251953077.webp?k=c83f25f9fee61d7f76c6d42842ce5e14eed8bcfe592f71d7f4872dec112e9e28&o='/></Col>
+        <Col><h6>ibis Rio Porto Atlantico</h6></Col>
+        <Col><h6> R$339 Diária</h6>
+        <Button variant="primary" a href='/agenda'>
+        Agendar
+      </Button>
+        </Col>
+       
         <Col></Col>
         
         <br/><br/>
       </Row>
       <br/><br/>
       <Row>
-        <Col><img width={'200'} heigh={'200'}src='http://disneyplusbrasil.com.br/wp-content/uploads/2023/03/Invasao-Secreta-Marvel.jpg'/></Col>
-        <Col><h6>Invasão Secreta: Nick Fury e cia surgem em novas imagens</h6></Col>
-        <Col></Col>
-        <Col></Col>
-        
-        <br/><br/>
-      </Row>
-      <br/><br/>
-      <Row>
-        <Col><img width={'200'} heigh={'200'}src='https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/08/Killers-of-the-Flower-Moon-Everything-We-Know-So-Far-feature.jpg'/></Col>
-        <Col><h6>Killers Of The Flower Moon: Filme de Scorsese será exibido em Cannes 2023</h6></Col>
-        <Col></Col>
+        <Col><img style={{width: '200px', height: '100px'}}  src='https://cf.bstatic.com/xdata/images/hotel/square600/89191374.webp?k=195fed4ceed86f3198aaa2a4d7f93875b17d31a7c950ce7774af377e94729200&o='/></Col>
+        <Col><h6>Hotel Atlântico Travel Copacabana</h6></Col>
+        <Col><h6> R$290 Diária</h6>
+        <Button variant="primary" a href='/agenda'>
+        Agendar
+      </Button>
+        </Col>
+      
         <Col></Col>
         
         <br/><br/>
       </Row>
       <br/><br/>
       <Row>
-        <Col><img width={'200'} heigh={'200'}src='https://johto.legiaodosherois.com.br/wp-content/uploads/2023/01/legiao_zeoQGlW7siwK.png'/></Col>
-        <Col><h6>Oscar: Academia estuda adicionar novo requisito de elegibilidade para o prêmio</h6></Col>
+        <Col><img style={{width: '200px', height: '100px'}}  src='https://cf.bstatic.com/xdata/images/hotel/square600/248124380.webp?k=bd4b8b4dd41c38cad66c28509018e4b388afe14f94c5a423899cac0d08566ce0&o='/></Col>
+        <Col><h6>ibis budget RJ Praia de Botafogo</h6></Col>
+        <Col><h6> R$377 Diária</h6>
+        <Button variant="primary" a href='/agenda'>
+        Agendar
+      </Button>
+        </Col>
+       
         <Col></Col>
+        
+        <br/><br/>
+      </Row>
+      <br/><br/>
+      <Row>
+        <Col><img style={{width: '200px', height: '100px'}}  src='https://cf.bstatic.com/xdata/images/hotel/square600/66810392.webp?k=c60ee17a8c1fe8db8404def538dd799515605d6ef8c22d14fc382caf7c9a06e0&o='/></Col>
+        <Col><h6>Hotel Monte Alegre</h6></Col>
+        <Col><h6> R$176 Diária</h6>
+        <Button variant="primary" a href='/agenda'>
+        Agendar
+      </Button>
+        </Col>
+        
+        <Col></Col>
+        
+        <br/><br/>
+      </Row>
+      <br/><br/>
+      <Row>
+        <Col><img style={{width: '200px', height: '100px'}}  src='https://cf.bstatic.com/xdata/images/hotel/square600/97553469.webp?k=0976ae33238b5dd263d35cd4715bf362cfabbb2c8f1273096622324b4267619f&o='/></Col>
+        <Col><h6>ibis Rio de Janeiro Santos Dumont</h6></Col>
+        <Col><h6> R$349 Diária</h6>
+        <Button variant="primary" a href='/agenda'>
+        Agendar
+      </Button>
+        </Col>
+        
         <Col></Col>
         
         <br/><br/>
@@ -108,16 +143,7 @@ function Dash() {
         <Col></Col>
         <Col></Col>
         
-<div class="card" styleS="width: 18rem;">
-<img class="card-img-top" src="https://a-static.mlcdn.com.br/800x560/geladeira-refrigerador-frost-free-cor-inox-310l-electrolux-tf39s/electrolux/2003558/f8630cefcf8dd1ea967171e25df3e923.jpeg" alt="Imagem de capa do card"/>
-  <div class="card-body">
-    <h5 class="card-title">Promoção Magazine Luiza</h5>
-    <p class="card-text">Geladeira/Refrigerador Frost Free cor Inox 310L Electrolux (TF39S), 11</p>
-    <p class="text-danger">De: R$ 2.849,50</p>
-    <p class="text-success">Por: R$ 2.839,50</p>
-    <a href="https://www.magazineluiza.com.br/geladeira-refrigerador-frost-free-cor-inox-310l-electrolux-tf39s/p/hhf6g7c8k3/ed/refr/?&force=1&seller_id=electrolux&utm_source=google&utm_medium=pla&utm_campaign=&partner_id=71263&gclid=Cj0KCQjwiZqhBhCJARIsACHHEH_Gg9ee4RV3cQU_WyEd8ktgI7Nd_LV_PGmtK4aAOTXeGhTwDBwnZvAaAr7VEALw_wcB&gclsrc=aw.ds" class="btn btn-primary">Visitar</a>
-  </div>
-</div>
+
         
         
         

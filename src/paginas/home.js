@@ -1,32 +1,100 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 import Carousel from 'react-bootstrap/Carousel';
-
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
-
-
-
 import Figure from 'react-bootstrap/Figure';
-
-
 import Nav from 'react-bootstrap/Nav';
 import Main from './main';
-
-
 import BootstrapTable from "react-bootstrap-table-next";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
-
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import axios from 'axios';
 
-  
+
+
+function Chamadas() {
+  const [data, setData] = useState([]); // Estado para armazenar os dados da API
+
+  useEffect(() => {
+    // Fazer a chamada GET à API quando o componente for montado
+    axios.get('http://localhost:3000')
+      .then(response => {
+        setData(response.data); // Atualizar o estado com os dados da API
+      })
+      .catch(error => {
+        console.error('Erro ao fazer a solicitação:', error);
+      });
+  }, []); // O array vazio como segundo argumento garante que a chamada seja feita apenas uma vez
+
+  return (
+    <div>
+      <h1>Dados da API:</h1>
+      <ul>
+        {data.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+
+
+function JsonGenerator() {
+  const [data, setData] = useState({
+    name: '',
+    age: '',
+    email: ''
+  });
+
+  const [jsonResult, setJsonResult] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const generateJSON = () => {
+    const jsonData = JSON.stringify(data, null, 2);
+    setJsonResult(jsonData);
+  };
+
+  return (
+    <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
+      <h2 style={{ textAlign: 'center' }}>Cadastro</h2>
+      <div style={{ marginBottom: '10px' }}>
+        <label>Nome:</label>
+        <input type="text" name="name" value={data.nome} onChange={handleChange} style={{ width: '100%', padding: '5px' }} />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <label>Idade:</label>
+        <input type="number" name="age" value={data.idade} onChange={handleChange} style={{ width: '100%', padding: '5px' }} />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <label>Email:</label>
+        <input type="email" name="email" value={data.email} onChange={handleChange} style={{ width: '100%', padding: '5px' }} />
+      </div>
+      <button onClick={generateJSON} style={{ width: '100%', padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Concluir</button>
+      {jsonResult && (
+        <div>
+          <h3 style={{ textAlign: 'center' }}>Dados do cadastro:</h3>
+          <pre>{jsonResult}</pre>
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+
+
 
 function Home() {
 
@@ -100,7 +168,7 @@ function Home() {
     <br/>
     <br/>
     <br/>
-    <h1 style={{textAlign: 'center', }}>Principais Destinos</h1>    
+    <h1 style={{textAlign: 'center'}}>Principais Destinos</h1>    
     { /*INICIO CARDS */}
 
         
@@ -163,7 +231,7 @@ Rio de Janeiro é um município brasileiro, capital do estado homônimo, situado
             <h1>Rio de Janeiro</h1>
             Devido à grande oferta turística do Rio de Janeiro, é comum encontrar opções de pacotes de viagens para o destino. Reserve já o seu pacote de viagem parar o Rio de Janeiro
             </Col>
-            <a href='/Trailer_horadorush'><button class="btn btn-warning">Confira agora!</button></a>
+            <a href='/Plano_Riodejaneiro'><button class="btn btn-warning">Confira agora!</button></a>
           </Row></Modal.Body>
       </Modal>
       </Card.Body>
@@ -197,11 +265,11 @@ Rio de Janeiro é um município brasileiro, capital do estado homônimo, situado
 
         <Col xs={6} md={4}>
         <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://cdn.ome.lt/OeMOu_9bPmH3Z8HSDon7k7tC6nE=/480x360/smart/filer_public/b5/43/b543a66b-9981-452a-b7b8-a0ebd329b9b4/maggie_1.jpg" />
+      <Card.Img variant="top" src="https://th.bing.com/th?id=OSK.HEROTbzPtIYL8no3vk63g3dCHXhcXloaH2Kn0a3yJlB0B18&w=472&h=280&c=1&rs=2&o=6&dpr=1.3&pid=SANGAM" />
       <Card.Body>
-        <Card.Title>TWD: Dead City ganha nova data</Card.Title>
+        <Card.Title>Salvador</Card.Title>
         <Card.Text>
-        Derivada é estrelada por Maggie e Negan
+        As melhores condições e hoteis bem situados.
         </Card.Text>
 
         { /*INICIO MODAL */}
@@ -220,11 +288,11 @@ Rio de Janeiro é um município brasileiro, capital do estado homônimo, situado
 
         {/*Inicio quinto card */}
         <Col xs={6}> <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://cdn.ome.lt/Ngjd2ch4-dxWC-mHhTFUYC4u0lk=/480x360/smart/filer_public/d2/83/d2834ec8-4e7c-44ce-8617-cb790478ea81/prs_220927_gs_0228.jpg" />
+      <Card.Img variant="top" src="https://th.bing.com/th?id=ALSTUE88FFC2BFE9BE973EE82287CDFCF8A2DDFA69525A410B3DFA7A79A5770978D03&w=472&h=280&c=13&rs=2&o=6&oif=webp&dpr=1.3&pid=SANGAM" />
       <Card.Body>
-        <Card.Title>Especial de Power Rangers ganha trailer</Card.Title>
+        <Card.Title>Paris</Card.Title>
         <Card.Text>
-        Série chega à Netflix em abril
+        Confira os pacotes com as melhores condições disponíveis
         </Card.Text>
         <Button>Saiba mais</Button>
       </Card.Body>
@@ -234,11 +302,11 @@ Rio de Janeiro é um município brasileiro, capital do estado homônimo, situado
 
     <Col xs={6} md={4}>
         <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://cdn.ome.lt/FryFkCciN2T5KL2kkFHT9AYUGkY=/480x360/smart/filer_public/27/67/2767765c-1088-43bb-958e-1b64ae0f095d/capa_de_destaque_-_480_x_360_35.png" />
+      <Card.Img variant="top" src="https://th.bing.com/th/id/R.a68042571adfdc2a9d66bb485f8d65c4?rik=3ExHQxSPHtDSsA&riu=http%3a%2f%2fimgs-akamai.mnstatic.com%2f8f%2fa5%2f8fa5e6d50c0d2ff5e5c2b1a7c246b9e2.jpg%3foutput-quality%3d75%26output-format%3dprogressive-jpeg%26interpolation%3dlanczos-none%26fit%3dinside%7c980%3a880&ehk=trp0cJVW6wqHk4s9GB3QhGP4qdAGw8jXzYdLTYgHIrc%3d&risl=&pid=ImgRaw&r=0" />
       <Card.Body>
-        <Card.Title>Invasão Secreta ganha data!</Card.Title>
+        <Card.Title>Espanha</Card.Title>
         <Card.Text>
-        Nova produção da Marvel chega em 21 de junho.
+        O território espanhol é um dos principais polos culturais e turísticos de todo o mundo.
         </Card.Text>
         { /*INICIO MODAL */}
         <Button>Saiba mais</Button>
@@ -251,9 +319,20 @@ Rio de Janeiro é um município brasileiro, capital do estado homônimo, situado
       </Row>
     </Container>
     
+    <br/>
+    <Row>
+          <Col>
+            <JsonGenerator />
+          </Col>
+        </Row>
+
+
+
+  
+    </>
 
     
-    </>
+    
     
     
     );
