@@ -15,15 +15,30 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import axios from 'axios';
 
 
+function Home() {
+
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+//// Começo das integrações
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const [data, setData] = useState([]); // Estado para armazenar os dados da API
+const [data2, setData2] = useState([]); 
+
+
+
 
 function Chamadas() {
-  const [data, setData] = useState([]); // Estado para armazenar os dados da API
+  
 
   useEffect(() => {
     // Fazer a chamada GET à API quando o componente for montado
-    axios.get('http://localhost:3000')
+    axios.get('http://localhost:3001/usuarios')
       .then(response => {
-        setData(response.data); // Atualizar o estado com os dados da API
+        setData2(response.data); // Atualizar o estado com os dados da API
       })
       .catch(error => {
         console.error('Erro ao fazer a solicitação:', error);
@@ -34,13 +49,42 @@ function Chamadas() {
     <div>
       <h1>Dados da API:</h1>
       <ul>
-        {data.map((item, index) => (
+        {data2.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
     </div>
   );
 }
+
+function CriaUsuario (novoU){
+    
+  
+  
+  const dados = novoU;
+
+  axios.post('http://localhost:3001/usuarios', dados) // Ajuste a URL conforme necessário
+      .then(response => {
+        console.log("Usuário cadastrado:", response.data);
+        setData(response.data); // Atualizar o estado com a resposta da API
+      })
+      .catch(error => {
+        console.error("Erro ao fazer a solicitação:", error);
+        if (error.response) {
+          // O servidor respondeu com um status de erro (fora da faixa 2xx)
+          console.error("Erro na resposta:", error.response.data);
+          console.error("Status:", error.response.status);
+        } else if (error.request) {
+          // A requisição foi feita, mas não houve resposta
+          console.error("Erro na requisição:", error.request);
+        } else {
+          // Algo aconteceu ao configurar a requisição
+          console.error("Erro ao configurar a requisição:", error.message);
+        }
+      });
+
+}
+
 
 
 
@@ -62,7 +106,11 @@ function JsonGenerator() {
   };
 
   const generateJSON = () => {
+
+    CriaUsuario(data);
     const jsonData = JSON.stringify(data, null, 2);
+    
+   
     setJsonResult(jsonData);
   };
 
@@ -96,16 +144,17 @@ function JsonGenerator() {
 
 
 
-function Home() {
 
 
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
-  
 
+
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// Final das integrações
   const [lgShow, setLgShow] = useState(false);
   const [lgShow2, setLgShow2] = useState(false);
   const [lgShow3, setLgShow3] = useState(false);
